@@ -1,5 +1,6 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
 import { lazy } from 'react';
+import NotFound from '~/components/NotFound';
 
 // Import the devtools only in development mode
 const TanStackRouterDevtools =
@@ -15,7 +16,7 @@ const TanStackRouterDevtools =
 export const Route = createRootRoute({
   component: () => (
     <>
-      <div className="p-2 flex gap-2">
+      <div className="flex gap-2 p-2">
         <Link to="/" className="[&.active]:font-bold">
           Home
         </Link>{' '}
@@ -28,4 +29,5 @@ export const Route = createRootRoute({
       <TanStackRouterDevtools />
     </>
   ),
+  notFoundComponent: NotFound,
 });
